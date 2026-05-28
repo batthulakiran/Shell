@@ -1,6 +1,6 @@
 #!/bin/bah
-PERSON1=Trump
-PERSON2=Iran
+PERSON1=Kiran
+PERSON2=Varam
 
 echo "$PERSON1: Hey Iran , we are going blast you !"
 echo "$PERSON2: Yes, Pleae, your are welcome !"

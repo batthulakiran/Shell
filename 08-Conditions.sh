@@ -10,9 +10,9 @@ Number=$1
 #le-less than or equal
 
 if [$Number -gt 20]; then
-    echo    "Given  number $NUMBERis greather to 20"
+    echo "Given  number $NUMBERis greather to 20"
 
     elif [ $Number - 20]
-    else 
+    else
         echo "Given number $NUMBER is less than 20"
     fi

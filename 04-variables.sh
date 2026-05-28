@@ -5,4 +5,4 @@
  echo "pls enter your password"
  read -s password 
 
- echo "password is $password"
+ echo "password is $password" 3 testing purpose printed

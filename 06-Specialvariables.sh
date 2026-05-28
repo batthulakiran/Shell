@@ -11,3 +11,5 @@ echo    "current directory: $$"
 sleep 5 &
 echo    "PID of background command running just now: $!"
 echo    "Line number: $LINENO"
+echo    "executed time: $SECONDS"
+echo    " Random number: $RANDOM"

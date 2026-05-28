@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Number=$1
+NUMBER=$1
 
 # gt-greater than
 # lt- less than
@@ -9,10 +9,10 @@ Number=$1
 # ge- greter than or equal
 # le-less than or equal
 
-if [$Number -gt 20]; then
-    echo "Given  number $NUMBERis greather to 20"
+if [$NUMBER -gt 20]; then
+    echo "Given  number $NUMBER is greather to 20"
 
-    elif [ "$Number - 20"]
+    elif [ "$NUMBER - 20"]
     else
     echo "Given number $NUMBER is less than 20"
     fi

@@ -11,9 +11,9 @@ fi
     #echo "I am continuing..."
 
     echo    "installing MYSQL..."
-    dnf install mysql -y
+    dnf install mariadb105 -y
 
-    if [ $? -ne 0]; then 
+    if [ $? -ne 0   ]; then 
     echo "installing MYSQL is ... Failed"
     exit 1
     else 

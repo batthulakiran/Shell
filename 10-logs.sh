@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 LOGS_DIR=/home/ec2-user/shell-logs
-LOgs_FILE="$LOGS_DIR/$0.log" # /home/ec2-user/shell-logs/10-logs.sh.log
+LOGS_FILE="$LOGS_DIR/$0.log" # /home/ec2-user/shell-logs/10-logs.sh.log
 
 #check root access or not
 if [ $USERID -ne 0 ]; then 
@@ -22,7 +22,7 @@ validate(){
     }   
     
     #echo "I am continuing..."
-    dnf list installed mariadb105  &>> $LOgs_FILE
+    dnf list installed mariadb105  &>> $LOGS_FILE
 
     if [ $? -eq 0 ]; then 
         echo " MYSQL already installed...skipping"
@@ -34,7 +34,7 @@ validate(){
       
     fi
 
-        dnf list installed nginx &>> $LOgs_FIL
+        dnf list installed nginx &>> $LOGS_FILE
 
     if [ $? -eq 0 ]; then 
         echo " nginx already installed...skipping"

@@ -14,10 +14,10 @@ fi
 # second org--> exit code 
 validate(){  
     if [ $2 -ne 0   ]; then 
-            echo "installing $1 is ... Failed"
+            echo "installing MYSQL is ... Failed"
             exit 1
             else 
-            echo "installin $1 is Sucess.."
+            echo "installin MYSQL is Sucess.."
     fi
     }   
     
@@ -29,7 +29,7 @@ validate(){
         else
     
         echo    "installing MYSQL..."
-        dnf install $1 -y
+        dnf install mariadb105 -y
         VALIDATE MYSQL $?
       
     fi

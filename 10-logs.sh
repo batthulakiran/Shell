@@ -14,10 +14,10 @@ fi
 # second org--> exit code 
 validate(){  
     if [ $2 -ne 0   ]; then 
-            echo "installing MYSQL is ... Failed"
+            echo "installing mariadb105 is ... Failed"
             exit 1
             else 
-            echo "installin MYSQL is Sucess.."
+            echo "installin mariadb105 is Sucess.."
     fi
     }   
     
@@ -25,12 +25,12 @@ validate(){
     dnf list installed mariadb105  &>> $LOGS_FILE
 
     if [ $? -eq 0 ]; then 
-        echo " MYSQL already installed...skipping"
+        echo " mariadb105 already installed...skipping"
         else
     
         echo    "installing MYSQL..."
         dnf install mariadb105 -y
-        VALIDATE MYSQL $?
+        VALIDATE mariadb105 $?
       
     fi
 

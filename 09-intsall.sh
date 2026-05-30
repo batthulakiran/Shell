@@ -40,7 +40,7 @@ validate(){
     
         echo    "installing nginx..."
         dnf install nginx -y
-             VALIDATE nginx $?
+             VALIDATE MySQL $?
     fi
     
 

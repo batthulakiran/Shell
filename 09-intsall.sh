@@ -9,9 +9,13 @@ if [ $USERID -ne 0 ]; then
 fi
    
     #echo "I am continuing..."
-
+    dnf list installed mariadb105
+    if [ $? eq 0 ]; then 
+        echo " MYSQL already installed"
+        exit 1
+    fi
     echo    "installing MYSQL..."
-    dnf install mariadb105hjghjg -y
+    dnf install mariadb105 -y
 
     if [ $? -ne 0   ]; then 
     echo "installing MYSQL is ... Failed"

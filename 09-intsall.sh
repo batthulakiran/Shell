@@ -7,7 +7,18 @@ if [ $USERID -ne 0 ]; then
     echo    "Pls run this script with root access"
     exit 1
 fi
-   
+
+# first org -> What are yu trying install
+# second org--> exit code 
+validate(){  
+    if [ $2 -ne 0   ]; then 
+            echo "installing $1 is ... Failed"
+            exit 1
+            else 
+            echo "installin $1 is Sucess.."
+    fi
+    }   
+    
     #echo "I am continuing..."
     dnf list installed mariadb105
 
@@ -16,13 +27,20 @@ fi
         else
     
         echo    "installing MYSQL..."
-        dnf install mariadb105 -y
-
-        if [ $? -ne 0   ]; then 
-            echo "installing MYSQL is ... Failed"
-            exit 1
-        else 
-            echo "installin MYSQL is Sucess.."
-
-        fi
+        dnf install $1 -y
+        VALIDATE MYSQL $?
+      
     fi
+
+        dnf list installed nginx
+
+    if [ $? -eq 0 ]; then 
+        echo " nginx already installed...skipping"
+        else
+    
+        echo    "installing nginx..."
+        dnf install nginx -y
+             VALIDATE nginx $?
+    fi
+    
+

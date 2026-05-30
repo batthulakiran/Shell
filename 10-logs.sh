@@ -30,7 +30,7 @@ validate(){
     
         echo    "installing MYSQL..."
         dnf install mariadb105 -y &>> $LOGS_FILE
-        VALIDATE mariadb105 $?
+        validate mariadb105 $?
       
     fi
 
@@ -42,7 +42,7 @@ validate(){
     
         echo    "installing nginx..."
         dnf install nginx -y &>> $LOGS_FILE
-             VALIDATE MySQL $?
+             validate nginx $?
     fi
     
 

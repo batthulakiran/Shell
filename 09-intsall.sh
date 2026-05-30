@@ -13,7 +13,7 @@ fi
     if [ $? eq 0 ]; then 
         echo " MYSQL already installed...skipping"
         else
-    fi
+    
     echo    "installing MYSQL..."
     dnf install mariadb105 -y
 

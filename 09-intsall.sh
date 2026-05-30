@@ -10,18 +10,19 @@ fi
    
     #echo "I am continuing..."
     dnf list installed mariadb105
-    if [ $? eq 0 ]; then 
+
+    if [ $? -eq 0 ]; then 
         echo " MYSQL already installed...skipping"
         else
     
-    echo    "installing MYSQL..."
-    dnf install mariadb105 -y
+        echo    "installing MYSQL..."
+        dnf install mariadb105 -y
 
-    if [ $? -ne 0   ]; then 
-    echo "installing MYSQL is ... Failed"
-    exit 1
-    else 
-        echo "installin MYSQL is Sucess.."
+        if [ $? -ne 0   ]; then 
+            echo "installing MYSQL is ... Failed"
+            exit 1
+        else 
+            echo "installin MYSQL is Sucess.."
 
         fi
     fi

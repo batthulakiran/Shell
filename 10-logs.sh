@@ -22,14 +22,14 @@ validate(){
     }   
     
     #echo "I am continuing..."
-    dnf list installed mariadb105  &>> $LOGS_FILE
+    dnf list installed mariadb105 &>> $LOGS_FILE
 
     if [ $? -eq 0 ]; then 
         echo " mariadb105 already installed...skipping"
         else
     
         echo    "installing MYSQL..."
-        dnf install mariadb105 -y
+        dnf install mariadb105 -y &>> $LOGS_FILE
         VALIDATE mariadb105 $?
       
     fi
@@ -41,7 +41,7 @@ validate(){
         else
     
         echo    "installing nginx..."
-        dnf install nginx -y
+        dnf install nginx -y &>> $LOGS_FILE
              VALIDATE MySQL $?
     fi
     

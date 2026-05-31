@@ -22,7 +22,7 @@ validate(){
             echo "$TIMESTAMP [Error] installing $1 is ... $R Failed $N" | tee -a $LOGS_FILE
             exit 1
             else 
-            echo "$TIMESTAMP [info] installing $1 is $G Success.." |   tee -a $LOGS_FILE
+            echo "$TIMESTAMP [info] installing $1 is ... $G Success.." |   tee -a $LOGS_FILE
     fi
     }   
     

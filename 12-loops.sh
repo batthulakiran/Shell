@@ -20,7 +20,7 @@ fi
 # second org--> exit code 
 validate(){  
     if [ $2 -ne 0   ]; then 
-            echo "$TIMESTAMP [Error] installing $1 is ... $R Failed" | tee -a $LOGS_FILE
+            echo "$TIMESTAMP [Error] installing $1 is ... $R Failed $N" | tee -a $LOGS_FILE
             exit 1
             else 
             echo "$TIMESTAMP [info] installing $1 is $G Success.." |   tee -a $LOGS_FILE
@@ -36,7 +36,7 @@ for package in $@
             dnf install $package -y &>> $LOGS_FILE
             validate $package $?
             else
-            echo "$TIMESTAMP [INFO] $package already installed ... SKIPPING"
+            echo "$TIMESTAMP [INFO] $package already installed ... $Y SKIPPING $N"
         fi
     done
 

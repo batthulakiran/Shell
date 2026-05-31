@@ -31,7 +31,7 @@ for package in $@
             dnf install $package -y &>> $LOGS_FILE
             validate $package $?
             else
-            echo "$package already installed ... SKIPPING"
+            echo "$TIMESTAMP [INFO] $package already installed ... SKIPPING"
         fi
     done
 

@@ -3,7 +3,7 @@
 USERID=$(id -u)
 LOGS_DIR=/var/log/shell-script
 LOGS_FILE="$LOGS_DIR/$0.log" 
-TIMESTAMP=${date +%Y-%M-%S %H:%M:%S}
+TIMESTAMP=$(date +%Y-%M-%S %H:%M:%S)
 
 #check root access or not
 if [ $USERID -ne 0 ]; then 

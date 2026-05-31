@@ -21,7 +21,9 @@ validate(){
     fi
     }   
     
-    for packgae in $@
+
+
+    for package in $@
     do
         echo    "installing $package"
     done

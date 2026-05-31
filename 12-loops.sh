@@ -27,8 +27,8 @@ validate(){
         echo    "installing $package"
         dnf list installed $package &>> $LOGS_FILE
         if [ $? -ne 0 ]; then 
-            dnf intsall $package -y &>> $LOGS_FILE
-            VALIDATE    "Installing $package" $?
+            dnf install $package -y &>> $LOGS_FILE
+            validate    "Installing $package" $?
         else
             echo "$package already installing... SKIPPING" &>> $LOGS_FILE
          fi   

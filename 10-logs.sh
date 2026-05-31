@@ -14,10 +14,10 @@ fi
 # second org--> exit code 
 validate(){  
     if [ $2 -ne 0   ]; then 
-            echo "installing mariadb105 is ... Failed"
+            echo "installing mariadb105 is ... Failed" | tee -a $LOGS_FILE
             exit 1
             else 
-            echo "installin mariadb105 is Sucess.."
+            echo "installin mariadb105 is Sucess.." | tee -a $LOGS_FILE
     fi
     }   
     
@@ -25,19 +25,19 @@ validate(){
     dnf list installed mariadb105 &>> $LOGS_FILE
 
     if [ $? -eq 0 ]; then 
-        echo " mariadb105 already installed...skipping"
+        echo " mariadb105 already installed...skipping" | tee -a $LOGS_FILE
         else
     
         echo    "installing MYSQL..."
-        dnf install mariadb105 -y &>> $LOGS_FILE
-        validate mariadb105 $?
+        dnf install mariadb105 -y &>> $LOGS_FILE            
+                validate mariadb105 $?
       
     fi
 
         dnf list installed nginx &>> $LOGS_FILE
 
     if [ $? -eq 0 ]; then 
-        echo " nginx already installed...skipping"
+        echo " nginx already installed...skipping"  | tee -a $LOGS_FILE
         else
     
         echo    "installing nginx..."

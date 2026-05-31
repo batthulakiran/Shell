@@ -1,0 +1,29 @@
+#!/bin/bash
+
+USERID=$(id -u)
+LOGS_DIR=/var/log/shell-script
+LOGS_FILE="$LOGS_DIR/$0.log" 
+
+#check root access or not
+if [ $USERID -ne 0 ]; then 
+    echo    "Pls run this script with root access"
+    exit 1
+fi
+
+# first org -> What are yu trying install
+# second org--> exit code 
+validate(){  
+    if [ $2 -ne 0   ]; then 
+            echo "installing $1 is ... Failed"
+            exit 1
+            else 
+            echo "installin $1 is Sucess.."
+    fi
+    }   
+    
+    for packgae in $@
+    do
+        echo    "installing $package"
+    done
+    
+
